@@ -10,7 +10,7 @@ import java.util.List;
 public class CustomerService {
     private final AccountRepository accountRepository;
 
-    // Injected by Spring by constructor
+    // Injected by Spring  constructor
     public CustomerService(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
