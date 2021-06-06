@@ -18,6 +18,8 @@ public class Account {
     @Column(name="closed_date")
     private Date closedDate;
 
+
+
     public Long getId() {
         return id;
     }

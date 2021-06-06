@@ -1,6 +1,8 @@
 package com.sda.traiangradinaru.webshop;
 
 import com.sda.traiangradinaru.webshop.model.Account;
+import com.sda.traiangradinaru.webshop.model.Customer;
+import com.sda.traiangradinaru.webshop.repository.AccountRepository;
 import com.sda.traiangradinaru.webshop.service.CustomerService;
 import com.sda.traiangradinaru.webshop.service.MailService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,8 @@ public class WebShopApplication implements CommandLineRunner {
     private CustomerService customerService;
     @Autowired
     private MailService mailService;
+    @Autowired
+    private AccountRepository accountRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(WebShopApplication.class, args);
@@ -34,15 +38,19 @@ public class WebShopApplication implements CommandLineRunner {
         // here we have the context --- now write your code
         Account account1 = new Account();
         account1.setId(1L);
+        Customer customer1 = new Customer();
+        customer1.setId(1L);
 
-        customerService.addCustomer(account1);
+        customerService.addCustomer(account1,customer1);
 
-        customerService.getCustomerAccounts().forEach(System.out::println);
+        //customerService.getCustomerAccounts().forEach(System.out::println);
 
         mailService.sendMail("traian.gradinaru@gmail.com",
                 "client@example.com",
-                "Mock subject example",
+                "Mock mail subject example",
                 "Mock mail body example");
 
+        // accountRepository.findAllByIsClosed(true).forEach(System.out::println);
+        accountRepository.findAllByBillingAddressIsContaining("Center").forEach(System.out::println);
     }
 }
