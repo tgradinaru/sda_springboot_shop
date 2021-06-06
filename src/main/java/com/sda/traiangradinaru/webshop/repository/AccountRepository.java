@@ -5,7 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * this Class is a mock for a functional database
+ * */
 @Repository
 public class AccountRepository {
     private List<Account> accounts = new ArrayList<>();
