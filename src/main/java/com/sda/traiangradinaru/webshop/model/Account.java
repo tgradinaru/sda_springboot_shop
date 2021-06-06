@@ -1,12 +1,21 @@
 package com.sda.traiangradinaru.webshop.model;
 
+import javax.persistence.*;
 import java.util.Date;
-
+@Entity
+@Table (name= "account")  /// sa fim expliciti
 public class Account {
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private Long id;
+    @Column(name="billing_address")
     private String billingAddress;
+    @Column(name="is_closed")
     private boolean isClosed;
+    @Column(name="creation_date")
     private Date creationDate;
+    @Column(name="closed_date")
     private Date closedDate;
 
     public Long getId() {
