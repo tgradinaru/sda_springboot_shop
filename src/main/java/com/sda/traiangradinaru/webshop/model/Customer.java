@@ -1,7 +1,5 @@
 package com.sda.traiangradinaru.webshop.model;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
 import javax.persistence.*;
 
 @Entity
@@ -9,6 +7,7 @@ import javax.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="customer_id")
     private Long id;
     @Column(name = "address")
     private String address;
