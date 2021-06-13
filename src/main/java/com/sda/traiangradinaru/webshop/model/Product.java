@@ -1,6 +1,7 @@
 package com.sda.traiangradinaru.webshop.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "product")
@@ -9,16 +10,29 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id")
     private Long id;
+
+    @NotBlank
+    @Size(min = 4, max = 1000)
     @Column(name = "name")
     private String name;
+
+    @NotBlank
+    @Size(min = 5, max = 10000)
     @Column(name = "description")
     private String description;
+
+    @Positive
     @Column(name = "price")
     private Double price;
+
+    @NotBlank
+    @Pattern(regexp = "[A-Z][A-Z][A-Z]")
     @Column(name = "currency")
     private String currency;
 
+
     @Enumerated(EnumType.STRING)
+    @NotNull // la ENUM nu punem @NotBlank ci punem @NotNull
     @Column(name = "category")
     private ProductCategory category;
 
