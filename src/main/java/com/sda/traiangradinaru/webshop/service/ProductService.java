@@ -30,7 +30,8 @@ public class ProductService {
     public List<Product> findAll(){
         //return new ArrayList<Product>((Collection<? extends Product>) productRepository.findAll());
         //feriti-va de cast-uri !!!
-        return StreamSupport.stream(productRepository.findAll().spliterator(), false).collect(Collectors.toList());
+        return StreamSupport.stream(productRepository.findAll().spliterator(),
+                false).collect(Collectors.toList());
     }
 
     public Optional<Product> findById(Long productId){
