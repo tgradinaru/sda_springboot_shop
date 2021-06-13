@@ -9,6 +9,8 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="customer_id")
     private Long id;
+
+
     @Column(name = "address")
     private String address;
     @Column(name = "phone")
@@ -59,6 +61,8 @@ public class Customer {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
 
     @Override
     public String toString() {

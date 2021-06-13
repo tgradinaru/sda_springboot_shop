@@ -1,10 +1,9 @@
 package com.sda.traiangradinaru.webshop.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+//@Table(uniqueConstraints = @UniqueConstraint())
 public class User {
     @Id
     private Long id;
