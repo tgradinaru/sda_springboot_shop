@@ -10,7 +10,6 @@ public class Account {
     @Column(name="id")
     private Long id;
 
-
     @Column(name = "login")
     private String login;
 
