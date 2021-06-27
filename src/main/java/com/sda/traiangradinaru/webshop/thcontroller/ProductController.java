@@ -20,7 +20,7 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/products")
     public String showProductsPage(Model model) {
         List<Product> products = productService.findAll();
         model.addAttribute("products", products);
@@ -39,6 +39,7 @@ public class ProductController {
     public String showAddProductPage(Product product){
         return "add-product";
     }
+
     @PostMapping("/add-product")
     public String addProduct(@Valid Product product, BindingResult result, Model model){
         if(result.hasErrors()){

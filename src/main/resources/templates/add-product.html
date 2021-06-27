@@ -22,8 +22,10 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="description" class="col-form-label">Description</label>
-                        <input type="text" th:field="*{description}" class="form-control" id="description" placeholder="Description">
-                        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="text-danger"></span>
+                        <input type="text" th:field="*{description}" class="form-control" id="description"
+                               placeholder="Description">
+                        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"
+                              class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="price" class="col-form-label">Price</label>
@@ -32,8 +34,10 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="currency" class="col-form-label">Currency</label>
-                        <input type="text" th:field="*{currency}" class="form-control" id="currency" placeholder="Currency">
-                        <span th:if="${#fields.hasErrors('currency')}" th:errors="*{currency}" class="text-danger"></span>
+                        <input type="text" th:field="*{currency}" class="form-control" id="currency"
+                               placeholder="Currency">
+                        <span th:if="${#fields.hasErrors('currency')}" th:errors="*{currency}"
+                              class="text-danger"></span>
                     </div>
                     <div class="form-group col-md-6">
                         <label>Category</label>
@@ -41,7 +45,8 @@
                         <input type="text" th:field="*{category}" class="form-control" id="category" placeholder="Category">
                         <span th:if="${#fields.hasErrors('category')}" th:errors="*{category}" class="text-danger"></span>-->
                         <select name="category">
-                            <option th:each="categoryOpt : ${T(com.sda.traiangradinaru.webshop.model.ProductCategory).values()}" th:value="${categoryOpt}" th:text="${categoryOpt.displayValue}"></option>
+                            <option th:each="categoryOpt : ${T(com.sda.traiangradinaru.webshop.model.ProductCategory).values()}"
+                                    th:value="${categoryOpt}" th:text="${categoryOpt.displayValue}"></option>
                         </select>
                     </div>
                 </div>
