@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
@@ -8,8 +7,6 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class HardcodedAuthenticationService {
-
-  model: any = {};
 
   constructor(
     private route: ActivatedRoute,

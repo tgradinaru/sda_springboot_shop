@@ -61,14 +61,13 @@ public class AccountController {
         UserDetails userDetails = accountService.loadUserByUsername(account.getLogin());
         if (userDetails != null &&
                 bCryptPasswordEncoder.matches(
-                        userDetails.getPassword(),
-                        bCryptPasswordEncoder.encode(account.getPassword())
+                        account.getPassword(),
+                        userDetails.getPassword()
                 )
         ) {
             return true;
         }
-        //to be fixed
-        return true;
+        return false;
     }
 
     @PostMapping("/user")

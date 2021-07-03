@@ -1,8 +1,36 @@
 <small *ngIf='invalidLogin'>invalid credentials</small>
-<div>
-User Name : <input type="text" name="username" [(ngModel)]="username">
-Password : <input type="password" name="password" [(ngModel)]="password">
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1>Login page</h1>
+
+        <div class="form-group">
+          <label for="username">Username</label>: <input type="text"
+                                                         id="username" name="username" class="form-control"
+                                                         autofocus="autofocus" placeholder="Username" [(ngModel)]="username"/>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>: <input type="password"
+                                                         id="password" name="password" class="form-control"
+                                                         placeholder="Password" [(ngModel)]="password"/>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+              <button class="form-control btn btn-primary" value="Log In" (click)=handleLogin()>Login here</button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <span>New user? <a routerLink="/register" class="navbar-link">Register</a></span>
+
+
+        </div>
+
+    </div>
+  </div>
+
+
 </div>
-<button (click)=handleLogin()>
-  Login
-  </button>
